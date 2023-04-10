@@ -19,10 +19,12 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
-        Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(hamletText);
-
         hamletParser.changeHamletToLeon();
+
+        Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(hamletParser.getHamletData());
+
+
 
 
         Assert.assertFalse(matcher.find());

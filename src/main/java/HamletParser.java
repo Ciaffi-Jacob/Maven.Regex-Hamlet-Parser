@@ -48,7 +48,7 @@ public class HamletParser {
             matcher.appendReplacement(stringBuilder, replacementText);
         }
         matcher.appendTail(stringBuilder);
-
+        hamletData = stringBuilder.toString();
 
         pattern = Pattern.compile("HAMLET");
         matcher = pattern.matcher(hamletData);
@@ -60,6 +60,7 @@ public class HamletParser {
             matcher.appendReplacement(stringBuilder, replacementText2);
         }
         matcher.appendTail(stringBuilder);
+        hamletData = stringBuilder.toString();
     }
 
     public void changeHoratioToTariq() {
