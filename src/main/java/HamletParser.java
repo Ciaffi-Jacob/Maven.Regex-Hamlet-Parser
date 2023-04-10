@@ -90,23 +90,19 @@ public class HamletParser {
     }
 
     public int findHoratio() {
-        Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(hamletData);
-        int count = 0;
-        while (matcher.find()){
-            count++;
-        }
-        return count;
+        return find("Horatio");
     }
 
     public int findHamlet() {
-        Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(hamletData);
+        return find("Hamlet");
+    }
+    public int find(String name){
         int count = 0;
+        Pattern pattern = Pattern.compile(name, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(hamletData);
         while (matcher.find()){
             count++;
         }
         return count;
     }
-
 }
