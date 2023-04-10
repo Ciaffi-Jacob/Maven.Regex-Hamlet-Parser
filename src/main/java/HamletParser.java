@@ -38,52 +38,27 @@ public class HamletParser {
         return hamletData;
     }
     public void changeHamletToLeon(){
-        Pattern pattern = Pattern.compile("Hamlet");
-        Matcher matcher = pattern.matcher(hamletData);
-        String replacementText = "Leon";
-       // String matchedText;
-        StringBuilder stringBuilder = new StringBuilder();
-        while (matcher.find()){
-          //  matchedText = matcher.group();
-            matcher.appendReplacement(stringBuilder, replacementText);
-        }
-        matcher.appendTail(stringBuilder);
-        hamletData = stringBuilder.toString();
-
-        pattern = Pattern.compile("HAMLET");
-        matcher = pattern.matcher(hamletData);
-        String replacementText2 = "LEON";
-        // String matchedText;
-        stringBuilder = new StringBuilder();
-        while (matcher.find()){
-            //  matchedText = matcher.group();
-            matcher.appendReplacement(stringBuilder, replacementText2);
-        }
-        matcher.appendTail(stringBuilder);
-        hamletData = stringBuilder.toString();
+        change("Hamlet", "Leon");
     }
 
     public void changeHoratioToTariq() {
-        Pattern pattern = Pattern.compile("Horatio");
+        change("Horatio", "Tariq");
+    }
+    public void change(String name1,String name2){
+        Pattern pattern = Pattern.compile(name1);
         Matcher matcher = pattern.matcher(hamletData);
-        String replacementText = "Tariq";
-        // String matchedText;
         StringBuilder stringBuilder = new StringBuilder();
         while (matcher.find()){
-            //  matchedText = matcher.group();
-            matcher.appendReplacement(stringBuilder, replacementText);
+            matcher.appendReplacement(stringBuilder, name2);
         }
         matcher.appendTail(stringBuilder);
         hamletData = stringBuilder.toString();
 
-        pattern = Pattern.compile("HORATIO");
+        pattern = Pattern.compile(name1.toUpperCase());
         matcher = pattern.matcher(hamletData);
-        String replacementText2 = "TARIQ";
-        // String matchedText;
         stringBuilder = new StringBuilder();
         while (matcher.find()){
-            //  matchedText = matcher.group();
-            matcher.appendReplacement(stringBuilder, replacementText2);
+            matcher.appendReplacement(stringBuilder, name2.toUpperCase());
         }
         matcher.appendTail(stringBuilder);
         hamletData = stringBuilder.toString();
