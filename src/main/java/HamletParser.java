@@ -37,13 +37,7 @@ public class HamletParser {
     public String getHamletData(){
         return hamletData;
     }
-    public void changeHamletToLeon(){
-        change("Hamlet", "Leon");
-    }
 
-    public void changeHoratioToTariq() {
-        change("Horatio", "Tariq");
-    }
     public void change(String name1,String name2){
         Pattern pattern = Pattern.compile(name1);
         Matcher matcher = pattern.matcher(hamletData);
@@ -64,13 +58,6 @@ public class HamletParser {
         hamletData = stringBuilder.toString();
     }
 
-    public int findHoratio() {
-        return find("Horatio");
-    }
-
-    public int findHamlet() {
-        return find("Hamlet");
-    }
     public int find(String name){
         int count = 0;
         Pattern pattern = Pattern.compile(name, Pattern.CASE_INSENSITIVE);
