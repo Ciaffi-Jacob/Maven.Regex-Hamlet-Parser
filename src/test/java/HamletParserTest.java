@@ -22,7 +22,7 @@ public class HamletParserTest {
         Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(hamletText);
 
-        hamletParser.changeHamletToLeon;
+        hamletParser.changeHamletToLeon();
 
 
         Assert.assertFalse(matcher.find());
@@ -33,7 +33,7 @@ public class HamletParserTest {
         Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(hamletText);
 
-        hamletParser.changeHoratioToTariq;
+        hamletParser.changeHoratioToTariq();
 
         Assert.assertFalse(matcher.find());
     }
@@ -55,4 +55,5 @@ public class HamletParserTest {
 
         Assert.assertEquals(expected, actual);
     }
+
 }
