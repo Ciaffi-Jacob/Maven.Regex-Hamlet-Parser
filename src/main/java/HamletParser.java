@@ -64,13 +64,49 @@ public class HamletParser {
     }
 
     public void changeHoratioToTariq() {
+        Pattern pattern = Pattern.compile("Horatio");
+        Matcher matcher = pattern.matcher(hamletData);
+        String replacementText = "Tariq";
+        // String matchedText;
+        StringBuilder stringBuilder = new StringBuilder();
+        while (matcher.find()){
+            //  matchedText = matcher.group();
+            matcher.appendReplacement(stringBuilder, replacementText);
+        }
+        matcher.appendTail(stringBuilder);
+        hamletData = stringBuilder.toString();
+
+        pattern = Pattern.compile("HORATIO");
+        matcher = pattern.matcher(hamletData);
+        String replacementText2 = "TARIQ";
+        // String matchedText;
+        stringBuilder = new StringBuilder();
+        while (matcher.find()){
+            //  matchedText = matcher.group();
+            matcher.appendReplacement(stringBuilder, replacementText2);
+        }
+        matcher.appendTail(stringBuilder);
+        hamletData = stringBuilder.toString();
     }
 
     public int findHoratio() {
-        return 0;
+        Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(hamletData);
+        int count = 0;
+        while (matcher.find()){
+            count++;
+        }
+        return count;
     }
 
     public int findHamlet() {
-        return 0;
+        Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(hamletData);
+        int count = 0;
+        while (matcher.find()){
+            count++;
+        }
+        return count;
     }
+
 }
